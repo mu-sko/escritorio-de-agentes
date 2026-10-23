@@ -1,0 +1,14 @@
+{
+  "ts": "2026-10-22T12:30:00Z",
+  "status": "pendente",
+  "expira_em": "2026-10-23T00:30:00Z",
+  "tipo": "baixar",
+  "produto": "Caixa de som Z",
+  "listingId": "MLB0000000001",
+  "preco_atual": 249.9,
+  "preco_novo": 236.9,
+  "roi_novo": 27,
+  "lucro_novo": 38.4,
+  "motivo": "Vencedor do catálogo R$ 9 abaixo, sem Full",
+  "link": "https://www.mercadolivre.com.br/"
+}

@@ -1,0 +1,18 @@
+{
+  "ts": "2026-10-19T20:58:00Z",
+  "semana": "20/10 a 26/10",
+  "metricas": {
+    "resumo": "18,4 mil de alcance",
+    "alcance": 18400,
+    "seguidores": 212
+  },
+  "itens": [
+    {
+      "tipo": "video",
+      "dia": "terça",
+      "titulo": "A taxa de 20% na prática",
+      "gancho": "Paguei R$ 100 lá fora. Quanto chegou aqui?",
+      "cta": "Comenta TAXA"
+    }
+  ]
+}
