@@ -12,7 +12,7 @@ const AGENTS=[
   quando:"Toda segunda 6h56",onde:"Nuvem (PC pode estar desligado)",autonomia:"Total (só lê dados)",
   como:["Lucro, margem e ROI da semana","Compara com a semana anterior","Anúncios abaixo de 25% de ROI","Encalhados e capital parado","Catálogos que você está perdendo","3 ações da semana"],
   regras:["Só lê, nunca altera preço","Entrega: notificação + e-mail"]},
- {id:"vigia",curto:"Vigia",nome:"Vigia de Anúncios",cargo:"Protege a margem dos anúncios",status:"pronto",hue:"#c07a2c",hair:"#2b2b2b",x:76,y:156,area:"seletto",
+ {id:"vigia",curto:"Vigia",nome:"Vigia de Anúncios",cargo:"Protege a margem dos anúncios",status:"pronto",hue:"#c07a2c",hair:"#2b2b2b",x:40,y:156,area:"seletto",
   quando:"Todo dia 9h28 (o Sim aplica na hora)",onde:"Hunter + Chrome da Seletto",autonomia:"Sugere; aplica só com seu sim",
   como:["Ganhando ou perdendo o catálogo, e por quanto","Custo real na planilha, payout no Hunter","Baixa até o piso: ROI 25% (15% se parado há 30+ dias)","Sobe preço quando o concorrente sumir ou subir","Recompra: avisa se o produto entra em promo no varejo","Proposta aparece aqui: o Sim aplica na hora"],
   regras:["Nunca muda preço sem o seu Sim","Proposta vence em 12h","Testa a troca no Hunter antes de aplicar","Hunter fora do ar: aplica pelo site do ML"]},
@@ -22,7 +22,7 @@ const AGENTS=[
   quando:"Domingo, junto com a pauta",onde:"Nuvem",autonomia:"Total (rascunho)",como:["Gancho dos 3 primeiros segundos","Fala em frases curtas, do jeito que você fala","Texto na tela e cortes","Chamada final: Comenta PALAVRA (ManyChat)","Legenda e hashtags","Carrossel card a card"],regras:["Vídeo até 45s","Sem travessão","Tom educado no Instagram"]},
  {id:"metricas",curto:"Analista IG",nome:"Analista do Instagram",cargo:"O que funcionou no Instagram",status:"pronto",hue:"#2f8f8a",hair:"#222",x:248,y:156,area:"musko",
   quando:"Domingo 17h52, abre a cadeia",onde:"Chrome (Meta Business Suite, CSSBuy, ByteMax, YouTube)",autonomia:"Total (só lê)",como:["Alcance, visualizações, salvos e compartilhamentos","Seguidores ganhos na semana","Melhor e pior post, com o porquê","Formato e tema que mais rendem","Passa tudo pro Pauteiro"],regras:["Só lê, nunca posta","Sem dado = diz que não tem"]},
- {id:"conciliador",curto:"Conciliador",nome:"Conciliador de Vendas",cargo:"Lança as vendas do ML na planilha",status:"pronto",hue:"#5a7d3a",hair:"#3a2a1c",x:124,y:156,area:"seletto",
+ {id:"conciliador",curto:"Conciliador",nome:"Conciliador de Vendas",cargo:"Lança as vendas do ML na planilha",status:"pronto",hue:"#5a7d3a",hair:"#3a2a1c",x:112,y:156,area:"seletto",
   quando:"Toda segunda 7h50",onde:"Hunter + planilha Seletto",autonomia:"Total (só escreve vendas nas colunas R a Z)",como:["Puxa os pedidos novos no Hunter","Acha a linha da compra na planilha (FIFO)","Lança quantidade, preço, taxa, frete e data","Confere o líquido com o payout do Hunter","Avisa margem negativa, reembolso e recompra"],regras:["Nunca mexe da coluna AA em diante","Venda sem compra lançada: só avisa"]},
  {id:"gerente",curto:"Gerente",nome:"Gerente Geral",cargo:"Maestro: orquestra a Seletto e o Musko",status:"pronto",hue:"#6d5aa8",hair:"#555",x:180,y:64,area:"musko",
   quando:"Toda segunda 8h12, depois do Financeiro e do Conciliador",onde:"Nuvem (lê o escritório e a memória dos projetos)",autonomia:"Recomenda e dá o foco da semana a cada agente",como:["Lê tudo que o time registrou na semana","O que rendeu na Seletto e no Musko","Observações e melhorias de cada projeto","Onde pôr tempo e dinheiro: 3 ações","O que está travado esperando você","Alerta se algum agente parou de rodar","Manda o foco da semana pra cada agente"],regras:["Nunca compra, muda preço nem publica","Recado dele segue as regras de cada agente","Você pode responder ou desfazer qualquer foco"]}
@@ -195,7 +195,7 @@ const MOVEIS=[
   {y:208,d:()=>planta(8,208)},{y:208,d:()=>planta(146,208)},{y:198,d:()=>planta(166,198)},
   {y:52,d:()=>arquivo(140,36)},{y:52,d:()=>arquivo(218,36)},
   {y:206,d:()=>abajur(80,206)},{y:200,d:()=>sofa(320,186)},{y:200,d:()=>{r(300,192,14,8,P.madeiraFrente);r(300,192,14,2,P.madeira)}},
-  {y:120,d:()=>bebedouro(194,120)},{y:60,d:()=>planta(165,60)},{y:60,d:()=>planta(195,60)}];
+  {y:120,d:()=>bebedouro(194,120)}];
 /* ----- quem não está trabalhando anda pela sala, dormindo ----- */
 var tagsProntas=false;
 const AREAS={seletto:[{x0:14,x1:44,y0:104,y1:118},{x0:110,x1:140,y0:104,y1:118},{x0:22,x1:62,y0:192,y1:206},{x0:94,x1:132,y0:192,y1:206},{x0:112,x1:144,y0:180,y1:190}],
