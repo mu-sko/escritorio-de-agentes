@@ -1,0 +1,16 @@
+{
+  "name": "escritorio-de-agentes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Time de agentes de IA que opera uma revenda no Mercado Livre e um perfil de conteúdo, com painel em pixel art e aprovação humana.",
+  "type": "module",
+  "scripts": {
+    "validar": "node scripts/validar.mjs",
+    "demo": "npx --yes serve@14.2.4 painel"
+  },
+  "devDependencies": {
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1"
+  },
+  "license": "MIT"
+}

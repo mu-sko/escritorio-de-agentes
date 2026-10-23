@@ -1,0 +1,109 @@
+{
+  "$comment": "Registro declarativo dos agentes: fonte única para cadência, autonomia e prova de execução. Valores sensíveis ficam fora do repositório.",
+  "fuso": "America/Sao_Paulo",
+  "agentes": [
+    {
+      "id": "avaliador",
+      "nome": "Avaliador de Produtos",
+      "negocio": "seletto",
+      "gatilho": {
+        "tipo": "sob_demanda"
+      },
+      "autonomia": "so_le",
+      "spec": "agentes/avaliador-de-produtos.md"
+    },
+    {
+      "id": "vigia",
+      "nome": "Vigia de Anúncios",
+      "negocio": "seletto",
+      "gatilho": {
+        "tipo": "cron",
+        "expr": "28 9 * * *"
+      },
+      "autonomia": "propoe_humano_aprova",
+      "prova_execucao": "eventos/vigia-{AAAAMMDDHHMM}",
+      "spec": "agentes/vigia-de-anuncios.md"
+    },
+    {
+      "id": "financeiro",
+      "nome": "Relatório Financeiro",
+      "negocio": "seletto",
+      "gatilho": {
+        "tipo": "cron",
+        "expr": "56 6 * * 1"
+      },
+      "autonomia": "so_le",
+      "prova_execucao": "eventos/financeiro-{AAAAMMDD}",
+      "spec": "agentes/relatorio-financeiro.md"
+    },
+    {
+      "id": "conciliador",
+      "nome": "Conciliador de Vendas",
+      "negocio": "seletto",
+      "gatilho": {
+        "tipo": "cron",
+        "expr": "50 7 * * 1"
+      },
+      "autonomia": "escreve_escopo_restrito",
+      "prova_execucao": "eventos/conciliador-{AAAAMMDD}",
+      "spec": "agentes/conciliador-de-vendas.md"
+    },
+    {
+      "id": "time-musko",
+      "nome": "Time Musko",
+      "negocio": "musko",
+      "mesas": [
+        "metricas",
+        "pauteiro",
+        "roteirista"
+      ],
+      "gatilho": {
+        "tipo": "cron",
+        "expr": "52 17 * * 0"
+      },
+      "autonomia": "rascunho",
+      "prova_execucao": "pautas/{AAAA-MM-DD}",
+      "spec": "agentes/time-musko.md"
+    },
+    {
+      "id": "gerente",
+      "nome": "Gerente Geral",
+      "negocio": "ambos",
+      "gatilho": {
+        "tipo": "cron",
+        "expr": "12 8 * * 1"
+      },
+      "depende_de": [
+        "financeiro",
+        "conciliador",
+        "time-musko"
+      ],
+      "autonomia": "recomenda",
+      "prova_execucao": "relatorios/{AAAA-MM-DD}",
+      "spec": "agentes/gerente-geral.md"
+    },
+    {
+      "id": "reserva",
+      "nome": "Reserva de segunda",
+      "negocio": "infra",
+      "gatilho": {
+        "tipo": "cron",
+        "expr": "37 22 * * 1"
+      },
+      "autonomia": "redispara_faltantes",
+      "spec": "agentes/reserva-de-segunda.md"
+    }
+  ],
+  "aposentados": [
+    {
+      "id": "buscador",
+      "motivo": "custo alto (4x por dia) e pouco resultado aproveitado",
+      "em": "2026-10-21"
+    },
+    {
+      "id": "garimpeiro",
+      "motivo": "custo diário sem uso real",
+      "em": "2026-10-21"
+    }
+  ]
+}
