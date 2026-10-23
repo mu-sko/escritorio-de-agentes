@@ -20,7 +20,7 @@
 
 ## O problema
 
-Eu toco dois negócios à noite, depois do trabalho CLT:
+Eu toco dois negócios à noite, depois do expediente:
 
 - **Seletto Company**: revenda no Mercado Livre. Compro em promoção e revendo com margem. Exige avaliar ofertas, vigiar a concorrência de preço todo dia, conciliar vendas e fechar a semana.
 - **Musko Importa**: perfil no Instagram que ensina a importar. Exige ler métricas, planejar a pauta e escrever roteiros toda semana.
