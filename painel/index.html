@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Escritório de Agentes</title>
+<meta name="description" content="Painel em pixel art de um time de agentes de IA que opera uma revenda no Mercado Livre e um perfil de conteúdo no Instagram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Figtree:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <p class="demo" id="demo" hidden>Modo demonstração: dados fictícios rodando no seu navegador. No claude.ai o painel lê o banco real dos agentes.</p>
+  <header class="top">
+    <div>
+      <h1>Escritório de Agentes</h1>
+      <p class="lede">Seu time de agentes trabalhando ao vivo. Toque num agente para ver o que ele faz.</p>
+    </div>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <section aria-label="Sala do escritório">
+    <div class="signs">
+      <div class="sign s1">Seletto Company<small>Revenda Mercado Livre</small></div>
+      <div class="sign s0">Diretoria<small>Coordena os dois</small></div>
+      <div class="sign s2">Musko Importa<small>Conteúdo e Instagram</small></div>
+    </div>
+    <div class="room" id="room">
+      <canvas id="scene" width="1440" height="864" aria-hidden="true"></canvas>
+    </div>
+    <div class="quem" id="quem"></div>
+    <div class="legend" style="margin-top:8px;align-items:center">
+      <button type="button" class="btn" id="mov" style="min-height:32px;padding:4px 10px;font-size:12px">Parar movimento</button>
+      <span>Na mesa: trabalhando agora</span>
+      <span>Andando com zZ: sem tarefa, esperando a próxima</span>
+      <span>Mão levantada: precisa de você</span>
+      <span>Toque no agente: conversa e recado</span>
+    </div>
+  </section>
+
+  <dialog class="conversa" id="conversa" aria-labelledby="cv-nome">
+    <div class="cv-top"><div><h3 id="cv-nome"></h3><p class="role" id="cv-cargo"></p></div><button class="cv-x" type="button" id="cv-fechar" aria-label="Fechar">×</button></div>
+    <div class="cv-body" id="cv-body"></div>
+  </dialog>
+
+  <section aria-label="Relatório do Gerente" id="relat" hidden>
+    <h2 style="margin-bottom:4px">Semana do Gerente</h2>
+    <p class="lede" id="relat-sub" style="margin:0 0 10px"></p>
+    <div class="pauta" id="relat-itens"></div>
+  </section>
+
+  <section aria-label="Pauta da semana" id="pauta" hidden>
+    <h2 style="margin-bottom:4px">Pauta da semana · Musko</h2>
+    <p class="lede" id="pauta-sub" style="margin:0 0 10px"></p>
+    <div class="pauta" id="pauta-itens"></div>
+  </section>
+
+  <section aria-label="Aprovações" id="aprov" hidden>
+    <h2 style="margin-bottom:8px">Esperando seu toque</h2>
+    <ul class="props" id="props"></ul>
+  </section>
+
+  <div class="cols">
+    <section aria-label="Atividade ao vivo">
+      <h2 style="margin-bottom:6px">Ao vivo</h2>
+      <ul class="feed" id="feed"><li><p class="empty">Carregando os registros do time…</p></li></ul>
+    </section>
+    <section aria-label="Fichas do time">
+      <h2 style="margin-bottom:8px">O time</h2>
+      <div class="desks" id="cards"></div>
+    </section>
+  </div>
+
+  <section>
+    <h2 style="margin-bottom:10px">Regras do escritório</h2>
+    <div class="rules">
+      <div class="rule"><h3>Roda sozinho</h3><ul><li>Ler e pesquisar (ML, Hunter, lojas)</li><li>Analisar, calcular, ranquear</li><li>Gerar relatório, pauta, rascunho</li><li>Rodar por agenda e avisar no fim</li></ul></div>
+      <div class="rule"><h3>Um toque seu</h3><ul><li>Gastar dinheiro (comprar produto)</li><li>Alterar preço de anúncio</li><li>Publicar post ou mandar mensagem</li></ul></div>
+      <div class="rule"><h3>Fora do escopo</h3><ul><li>Escrever ou reagir no Discord pela sua conta</li><li>Exploits com contas falsas ou burla de cupom</li><li>Aprovar compra com dado só do bot</li></ul></div>
+    </div>
+  </section>
+
+  <details class="more">
+    <summary>Como o escritório foi construído</summary>
+    <ol class="timeline" id="timeline"></ol>
+  </details>
+</div>
+
+<script src="demo-store.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
