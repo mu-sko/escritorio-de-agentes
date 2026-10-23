@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mu-sko/escritorio-de-agentes/schemas/pauta.schema.json",
+  "title": "pautas/<AAAA-MM-DD do domingo>",
+  "description": "Pauta da semana do Time Musko.",
+  "type": "object",
+  "required": [
+    "ts",
+    "semana",
+    "itens"
+  ],
+  "properties": {
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "semana": {
+      "type": "string"
+    },
+    "metricas": {
+      "type": "object",
+      "properties": {
+        "resumo": {
+          "type": "string"
+        },
+        "alcance": {
+          "type": "number"
+        },
+        "seguidores": {
+          "type": "number"
+        }
+      }
+    },
+    "itens": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "tipo",
+          "titulo"
+        ],
+        "properties": {
+          "tipo": {
+            "enum": [
+              "video",
+              "carrossel"
+            ]
+          },
+          "dia": {
+            "type": "string"
+          },
+          "duracao": {
+            "type": "string"
+          },
+          "titulo": {
+            "type": "string"
+          },
+          "por_que": {
+            "type": "string"
+          },
+          "gancho": {
+            "type": "string"
+          },
+          "ganchos_alt": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "roteiro": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "texto_tela": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cta": {
+            "type": "string"
+          },
+          "legenda": {
+            "type": "string"
+          },
+          "hashtags": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "stories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "auditoria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

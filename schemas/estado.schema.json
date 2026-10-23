@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mu-sko/escritorio-de-agentes/schemas/estado.schema.json",
+  "title": "estado/<agente>",
+  "description": "O que o agente está fazendo agora. Um documento por agente.",
+  "type": "object",
+  "required": [
+    "status",
+    "tarefa",
+    "ts"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "enum": [
+        "trabalhando",
+        "ocioso"
+      ]
+    },
+    "tarefa": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "precisa": {
+      "type": "string",
+      "description": "Preenchido = mão levantada: algo que só o humano resolve"
+    }
+  }
+}

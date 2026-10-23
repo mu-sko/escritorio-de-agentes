@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mu-sko/escritorio-de-agentes/schemas/evento.schema.json",
+  "title": "eventos/<agente>-<AAAAMMDD[HHMM]>",
+  "description": "Registro do feed e trilha de auditoria.",
+  "type": "object",
+  "required": [
+    "agente",
+    "ts",
+    "titulo",
+    "veredito"
+  ],
+  "properties": {
+    "agente": {
+      "enum": [
+        "avaliador",
+        "vigia",
+        "financeiro",
+        "conciliador",
+        "metricas",
+        "pauteiro",
+        "roteirista",
+        "gerente"
+      ]
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "resumo": {
+      "type": "string"
+    },
+    "veredito": {
+      "enum": [
+        "info",
+        "preco",
+        "recompra",
+        "aprovado",
+        "reprovado",
+        "pendente",
+        "bug",
+        "semana",
+        "conciliacao",
+        "metricas",
+        "pauta",
+        "decisao"
+      ]
+    },
+    "link": {
+      "type": "string",
+      "pattern": "^https://"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mu-sko/escritorio-de-agentes/schemas/ordem.schema.json",
+  "title": "ordens/<agente>-<AAAAMMDDHHMMSS>",
+  "description": "Recado assíncrono para um agente.",
+  "type": "object",
+  "required": [
+    "agente",
+    "texto",
+    "ts",
+    "status",
+    "de"
+  ],
+  "properties": {
+    "agente": {
+      "type": "string"
+    },
+    "texto": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "pendente",
+        "feito"
+      ]
+    },
+    "de": {
+      "enum": [
+        "painel",
+        "gerente"
+      ]
+    },
+    "resposta": {
+      "type": "string"
+    },
+    "feito_em": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

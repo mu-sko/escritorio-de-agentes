@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mu-sko/escritorio-de-agentes/schemas/relatorio.schema.json",
+  "title": "relatorios/<AAAA-MM-DD da segunda>",
+  "description": "Relatório semanal do Gerente Geral.",
+  "type": "object",
+  "required": [
+    "ts",
+    "semana",
+    "resumo",
+    "acoes"
+  ],
+  "$defs": {
+    "proj": {
+      "type": "object",
+      "properties": {
+        "titulo": {
+          "type": "string"
+        },
+        "rendeu": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "observacoes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "melhorias": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "properties": {
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "semana": {
+      "type": "string"
+    },
+    "resumo": {
+      "type": "string"
+    },
+    "acoes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "travado": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "alertas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "seletto": {
+      "$ref": "#/$defs/proj"
+    },
+    "musko": {
+      "$ref": "#/$defs/proj"
+    },
+    "ordens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

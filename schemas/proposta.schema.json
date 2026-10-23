@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mu-sko/escritorio-de-agentes/schemas/proposta.schema.json",
+  "title": "propostas/<listingId>-<AAAAMMDDHHMM>",
+  "description": "Proposta de preço do Vigia, aplicada só com o Sim humano.",
+  "type": "object",
+  "required": [
+    "ts",
+    "status",
+    "tipo",
+    "produto",
+    "listingId",
+    "preco_atual",
+    "preco_novo",
+    "roi_novo"
+  ],
+  "properties": {
+    "ts": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "pendente",
+        "aplicando",
+        "aplicado",
+        "aprovado",
+        "verificar",
+        "falhou",
+        "recusado"
+      ]
+    },
+    "expira_em": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tipo": {
+      "enum": [
+        "baixar",
+        "subir"
+      ]
+    },
+    "produto": {
+      "type": "string"
+    },
+    "listingId": {
+      "type": "string",
+      "pattern": "^MLB[0-9]+$"
+    },
+    "variationId": {
+      "type": [
+        "string",
+        "number"
+      ]
+    },
+    "preco_atual": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "preco_novo": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "roi_novo": {
+      "type": "number"
+    },
+    "lucro_novo": {
+      "type": "number"
+    },
+    "motivo": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "decidido_em": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "aplicado_em": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "por": {
+      "enum": [
+        "painel",
+        "vigia"
+      ]
+    },
+    "erro": {
+      "type": "string"
+    }
+  }
+}
